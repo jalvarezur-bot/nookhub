@@ -1,0 +1,6 @@
+{
+  "name": "NookHub - Guía y Pasaporte Animal Crossing",
+  "description": "Tu asistente completo para Animal Crossing: New Horizons. Gestiona vecinos, pasaporte insular, galería fotográfica, capturas de fauna, eventos, cumpleaños y enciclopedia verificada.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

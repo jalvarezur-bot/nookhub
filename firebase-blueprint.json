@@ -1,0 +1,54 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile and synced Animal Crossing: New Horizons island data including passport, residents, and critter collection.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the island representative.",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address.",
+          "maxLength": 256
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name.",
+          "maxLength": 128
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "User Google profile avatar URL.",
+          "maxLength": 1024
+        },
+        "islandData": {
+          "type": "string",
+          "description": "Serialized JSON string containing complete island data (passport, residents, critters, tasks, photos).",
+          "maxLength": 1048576
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        }
+      },
+      "required": ["userId", "email", "islandData", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores private island profile and synchronization data for each authenticated player."
+    }
+  }
+}
